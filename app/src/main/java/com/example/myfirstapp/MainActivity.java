@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.annotation.SuppressLint;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.net.MacAddress;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -29,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private String userinfo, userpwd;
     private RadioGroup radioGroup;
     private Context context;
+    private WifiConfiguration wifiConfiguration;
+    private DevicePolicyManager dpm;
+    private ComponentName chuan;
     private String sex;
     private static final String TAG = "MainActivity";
     private TelephonyManager telephonyManager;
@@ -43,8 +52,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SubscriptionManager sm = SubscriptionManager.from(this);
+
         TelephonyManager tele = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-//        Log.e("elog","hereaaaaaa");
+//        Log.e("elog","macaddress");
+//        MacAddress macaddress = wifiConfiguration.getRandomizedMacAddress();
+//        String wifimacaddress = dpm.getWifiMacAddress(chuan);
+//        Log.e("elog","wifimacaddress" + wifimacaddress);
+//        Log.e("elog","macaddress" + macaddress);
+//        String serialNumber = Build.getSerial();
+//        Log.e("elog","serial" + serialNumber);
 //        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
 //            // TODO: Consider calling
 //            //    ActivityCompat#requestPermissions
